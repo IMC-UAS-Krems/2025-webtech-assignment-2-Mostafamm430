@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Burger House – Online Order</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+  />
+
+  
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-light">
+
+  
+  <div class="position-fixed top-0 end-0 p-3" style="z-index: 1080;">
+    <div id="addToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body">
+          Item added to cart ✅
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+
+  
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">
+        Burger <span class="text-warning">House</span>
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNav"
+        aria-controls="mainNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="#menu-section">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#checkout-section">Checkout</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#confirmation-section">Order summary</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  
+  <main class="container my-4">
+
+    
+    <section class="hero mb-4">
+      <div class="row align-items-center">
+        <div class="col-md-8">
+          <h1 class="display-6 fw-bold mb-3">Build your perfect burger meal</h1>
+          <p class="lead mb-2">
+            Choose your burgers, combos, fries and drinks. Add items to the cart and place your order in a few simple steps.
+          </p>
+          <p class="mb-0">
+            <span class="badge bg-success me-2">10% discount</span>
+            automatically applied when you order 3 or more items.
+          </p>
+        </div>
+        <div class="col-md-4 text-md-end mt-3 mt-md-0">
+          <button class="btn btn-warning btn-lg">
+            Start ordering
+          </button>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="menu-section" class="mb-5">
+      <div class="row g-4">
+        
+        <div class="col-lg-8">
+          <h2 class="h4 mb-3">Burgers & Combos</h2>
+          <div class="row g-3">
+            
+            <div class="col-sm-6 col-md-4 col-lg-3">
+              <div class="card product-card h-100">
+                <img src="Documentation.pdf/img.jpg" class="card-img-top" alt="Classic beef burger" />
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Classic Beef</h5>
+                  <p class="card-text small text-muted">
+                    Juicy beef patty, cheese, lettuce & sauce.
+                    <br><strong>Sandwich only</strong>
+                  </p>
+                  <div class="mt-auto d-flex justify-content-between align-items-center">
+                    <span class="badge bg-warning text-dark">$7</span>
+                    <button
+                      class="btn btn-sm btn-outline-warning add-to-cart"
+                      data-id="1"
+                      data-name="Classic Beef Burger"
+                      data-price="7"
+                    >
+                      Add
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="col-sm-6 col-md-4 col-lg-3">
+              <div class="card product-card h-100">
+                <img src="Documentation.pdf/compo.jpg" class="card-img-top" alt="Classic beef combo" />
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Classic Beef Combo</h5>
+                  <p class="card-text small text-muted">
+                    Beef burger + fries + soft drink.
+                  </p>
+                  <div class="mt-auto d-flex justify-content-between align-items-center">
+                    <span class="badge bg-warning text-dark">$10</span>
+                    <button
+                      class="btn btn-sm btn-outline-warning add-to-cart"
+                      data-id="2"
+                      data-name="Classic Beef Combo"
+                      data-price="10"
+                    >
+                      Add
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="col-sm-6 col-md-4 col-lg-3">
+              <div class="card product-card h-100">
+                <img src="Documentation.pdf/chicken_burger.jpg" class="card-img-top" alt="Crispy chicken burger" />
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Crispy Chicken</h5>
+                  <p class="card-text small text-muted">
+                    Fried chicken fillet, mayo & pickles.
+                    <br><strong>Sandwich only</strong>
+                  </p>
+                  <div class="mt-auto d-flex justify-content-between align-items-center">
+                    <span class="badge bg-warning text-dark">$6</span>
+                    <button
+                      class="btn btn-sm btn-outline-warning add-to-cart"
+                      data-id="3"
+                      data-name="Crispy Chicken Burger"
+                      data-price="6"
+                    >
+                      Add
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="col-sm-6 col-md-4 col-lg-3">
+              <div class="card product-card h-100">
+                <img src="Documentation.pdf/Ocompo2.jpg" class="card-img-top" alt="Chicken combo" />
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Chicken Combo</h5>
+                  <p class="card-text small text-muted">
+                    Chicken burger + fries + soft drink.
+                  </p>
+                  <div class="mt-auto d-flex justify-content-between align-items-center">
+                    <span class="badge bg-warning text-dark">$9</span>
+                    <button
+                      class="btn btn-sm btn-outline-warning add-to-cart"
+                      data-id="4"
+                      data-name="Chicken Combo"
+                      data-price="9"
+                    >
+                      Add
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="col-sm-6 col-md-4 col-lg-3">
+              <div class="card product-card h-100">
+                <img src="Documentation.pdf/smached.jpg" class="card-img-top" alt="Smashed double burger" />
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Smashed Double</h5>
+                  <p class="card-text small text-muted">
+                    Double smashed beef, cheese & caramelized onions.
+                    <br><strong>Sandwich only</strong>
+                  </p>
+                  <div class="mt-auto d-flex justify-content-between align-items-center">
+                    <span class="badge bg-warning text-dark">$9</span>
+                    <button
+                      class="btn btn-sm btn-outline-warning add-to-cart"
+                      data-id="5"
+                      data-name="Smashed Double Burger"
+                      data-price="9"
+                    >
+                      Add
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="col-sm-6 col-md-4 col-lg-3">
+              <div class="card product-card h-100">
+                <img src="Documentation.pdf/smashed compo .jpg" class="card-img-top" alt="Smashed burger combo" />
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Smashed Combo</h5>
+                  <p class="card-text small text-muted">
+                    Smashed double burger + fries + drink.
+                  </p>
+                  <div class="mt-auto d-flex justify-content-between align-items-center">
+                    <span class="badge bg-warning text-dark">$12</span>
+                    <button
+                      class="btn btn-sm btn-outline-warning add-to-cart"
+                      data-id="6"
+                      data-name="Smashed Combo"
+                      data-price="12"
+                    >
+                      Add
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="col-sm-6 col-md-4 col-lg-3">
+              <div class="card product-card h-100">
+                <img src="Documentation.pdf/cheese freise .jpg" class="card-img-top" alt="Cheese fries" />
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Cheese Fries</h5>
+                  <p class="card-text small text-muted">
+                    Crispy fries topped with melted cheese.
+                  </p>
+                  <div class="mt-auto d-flex justify-content-between align-items-center">
+                    <span class="badge bg-warning text-dark">$4</span>
+                    <button
+                      class="btn btn-sm btn-outline-warning add-to-cart"
+                      data-id="7"
+                      data-name="Cheese Fries"
+                      data-price="4"
+                    >
+                      Add
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="col-sm-6 col-md-4 col-lg-3">
+              <div class="card product-card h-100">
+                <img src="Documentation.pdf/nuggets.jpg" class="card-img-top" alt="Chicken nuggets" />
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Chicken Nuggets (8pc)</h5>
+                  <p class="card-text small text-muted">
+                    Crispy chicken nuggets with dipping sauce.
+                  </p>
+                  <div class="mt-auto d-flex justify-content-between align-items-center">
+                    <span class="badge bg-warning text-dark">$5</span>
+                    <button
+                      class="btn btn-sm btn-outline-warning add-to-cart"
+                      data-id="8"
+                      data-name="Chicken Nuggets (8pc)"
+                      data-price="5"
+                    >
+                      Add
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="col-sm-6 col-md-4 col-lg-3">
+              <div class="card product-card h-100">
+                <img src="Documentation.pdf/Family compo.jpg" class="card-img-top" alt="Family combo box" />
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Family Combo Box</h5>
+                  <p class="card-text small text-muted">
+                    4 burgers, 2 large fries, 1L soft drink.
+                  </p>
+                  <div class="mt-auto d-flex justify-content-between align-items-center">
+                    <span class="badge bg-warning text-dark">$20</span>
+                    <button
+                      class="btn btn-sm btn-outline-warning add-to-cart"
+                      data-id="9"
+                      data-name="Family Combo Box"
+                      data-price="20"
+                    >
+                      Add
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="col-sm-6 col-md-4 col-lg-3">
+              <div class="card product-card h-100">
+                <img src="Documentation.pdf/Kids.jpg" class="card-img-top" alt="Kids meal" />
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Kids Meal</h5>
+                  <p class="card-text small text-muted">
+                    Mini burger, small fries & juice box.
+                  </p>
+                  <div class="mt-auto d-flex justify-content-between align-items-center">
+                    <span class="badge bg-warning text-dark">$8</span>
+                    <button
+                      class="btn btn-sm btn-outline-warning add-to-cart"
+                      data-id="10"
+                      data-name="Kids Meal"
+                      data-price="8"
+                    >
+                      Add
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      
+        <div class="col-lg-4">
+          <div class="card shadow-sm">
+            <div class="card-header d-flex justify-content-between align-items-center">
+              <span>Your cart</span>
+              <span class="badge bg-secondary">
+                <span id="cart-count">0</span> items
+              </span>
+            </div>
+            <div class="card-body">
+              <ul id="cart-items" class="list-group mb-3 small"></ul>
+
+              <p class="d-flex justify-content-between mb-1">
+                <span>Subtotal:</span>
+                <strong>$<span id="cart-subtotal">0.00</span></strong>
+              </p>
+              <p id="cart-discount-hint" class="small text-muted mb-3">
+                Order 3 or more items to receive 10% discount.
+              </p>
+
+              <button
+                id="checkout-btn"
+                class="btn btn-warning w-100"
+                disabled
+              >
+                Checkout
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="checkout-section" class="mb-5 d-none">
+      <div class="card shadow-sm">
+        <div class="card-header">
+          <h2 class="h5 mb-0">Customer information</h2>
+        </div>
+        <div class="card-body">
+          <form id="checkout-form" novalidate>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="firstName" class="form-label">First name</label>
+                <input type="text" class="form-control" id="firstName" required />
+                <div class="invalid-feedback">
+                  Please enter your first name.
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="lastName" class="form-label">Last name</label>
+                <input type="text" class="form-control" id="lastName" required />
+                <div class="invalid-feedback">
+                  Please enter your last name.
+                </div>
+              </div>
+              <div class="col-12">
+                <label for="address" class="form-label">Address</label>
+                <input type="text" class="form-control" id="address" required />
+                <div class="invalid-feedback">
+                  Please enter your address.
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="city" class="form-label">City</label>
+                <input type="text" class="form-control" id="city" required />
+                <div class="invalid-feedback">
+                  Please enter your city.
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="zip" class="form-label">ZIP code</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="zip"
+                  maxlength="6"
+                  required
+                />
+                <div class="invalid-feedback">
+                  ZIP must be numbers only, max 6 digits.
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  required
+                />
+                <div class="invalid-feedback">
+                  Please enter a valid email.
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="phone" class="form-label">Phone</label>
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="phone"
+                  required
+                />
+                <div class="invalid-feedback">
+                  Phone number should be digits only.
+                </div>
+              </div>
+            </div>
+
+            <hr class="my-4" />
+
+            <button type="submit" class="btn btn-success w-100">
+              Place order
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="confirmation-section" class="mb-5 d-none">
+      <div class="alert alert-success" role="alert">
+        Thank you, <strong id="confirmation-name"></strong>! Your order has
+        been placed.
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <h2 class="h5">Order summary</h2>
+          <div class="table-responsive">
+            <table class="table table-sm align-middle">
+              <thead class="table-light">
+                <tr>
+                  <th>Item</th>
+                  <th>Qty</th>
+                  <th>Price</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody id="summary-items"></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <h2 class="h5">Totals</h2>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Subtotal</span>
+              <strong>$<span id="summary-subtotal">0.00</span></strong>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Discount (10% for 3+ items)</span>
+              <strong>-$<span id="summary-discount">0.00</span></strong>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Tax (5%)</span>
+              <strong>$<span id="summary-tax">0.00</span></strong>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Total to pay</span>
+              <strong>$<span id="summary-total">0.00</span></strong>
+            </li>
+          </ul>
+
+          <h2 class="h6">Customer details</h2>
+          <p id="summary-customer" class="small mb-0"></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script src="js/scripts.js"></script>
+</body>
+</html>
+
